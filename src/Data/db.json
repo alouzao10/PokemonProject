@@ -1,19 +1,25 @@
 {
-  "posts": [
+  "trainers": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "Ash",
+      "user": "TheVeryBest",
+      "pass": "pokemon123",
+      "pokemon": []
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "name": "Misty",
+      "user": "WaterPower",
+      "pass": "dripdrip123",
+      "pokemon": []
+    },
+    {
+      "id": 3,
+      "name": "Brock",
+      "user": "RockNRoller",
+      "pass": "rocksmash123",
+      "pokemon": []
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
