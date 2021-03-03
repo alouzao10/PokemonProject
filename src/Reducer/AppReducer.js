@@ -1,17 +1,11 @@
 export default (state, payload) => {
     switch(payload.action){
         case 'ADD_CARD':
-            let newCard = payload.data;
-            // Add the new pet and return new Pets
-            fetch('http://localhost:5000/trainers/', {
-              method: 'POST',
-              headers: { 'Content-type': 'application/json' },
-              body: JSON.stringify(newCard),
-            })
-              .then((res) => res.json())
-              .then((data) => {
-                return [...state.trainers, data];
-              });
+            let newCard = payload.data.newCard;
+            let userID = payload.data.userID;
+            // Add the new card to the current trainer and return updates
+            // Use the PUT method, see example from crash course
+
             break;
         default:
         break;

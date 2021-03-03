@@ -6,7 +6,7 @@ import { GlobalContext } from '../../Context/AppContext';
 function Cards(props) {
 	const { trainers } = useContext(GlobalContext);
 
-	const { apiKey, apiUrl } = props;
+	const { apiUrl } = props;
 
 	const [user, setUser] = useState('');
 	const [pass, setPass] = useState('');
@@ -76,7 +76,9 @@ function Cards(props) {
 			images: card.images,
 			rarity: card.rarity,
 		};
-		// Pass the new card to be saved in the db file
+      // Pass the new card to be saved in the db file
+      // Pass in the trainer info to save the cards based on the trainer
+      addCard(newCard, currUser.id)
 	};
 
 	const removeFromCollection = (oldCard) => {

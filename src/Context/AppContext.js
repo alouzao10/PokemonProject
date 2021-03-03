@@ -20,15 +20,15 @@ export const AppProvider = ({children}) => {
 
     // Define functions for use
     // ...
-    function addCard(newCard){
+    function addCard(newCard, userID){
         setState({
             action: 'ADD_CARD',
-            data: newCard
+            data: {newCard, userID}
         });
     }
 
     return(
-        <GlobalContext.Provider value={{trainers: initialState.trainers}}>
+        <GlobalContext.Provider value={{trainers: initialState.trainers, addCard}}>
             {children}
         </GlobalContext.Provider>
     )
