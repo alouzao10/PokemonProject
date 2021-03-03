@@ -3,16 +3,19 @@ import React, { useState, useContext } from 'react';
 
 import { GlobalContext } from '../../Context/AppContext';
 
-function Cards() {
+function Cards(props) {
 	const { trainers } = useContext(GlobalContext);
+
+	const { apiKey, apiUrl } = props;
 
 	const [user, setUser] = useState('');
 	const [pass, setPass] = useState('');
+	const [userAuth, setUserAuth] = useState(false);
 
 	const [currUser, setCurrUser] = useState({});
 
-	const [userAuth, setUserAuth] = useState(false);
 	const [pokeName, setName] = useState('');
+	const [cards, setCards] = useState([]);
 
 	const updateFields = (e) => {
 		let field = e.target.name;
@@ -43,23 +46,42 @@ function Cards() {
 			setUserAuth(true);
 		} else {
 			alert('Trainer Not Found. Please Try Again.');
-         setUserAuth(false);
-         setCurrUser({});
-         setUser('');
-         setPass('');
+			setUserAuth(false);
+			setCurrUser({});
+			setUser('');
+			setPass('');
 		}
 	};
 
 	const logoutTrainer = () => {
 		setUserAuth(false);
-      setCurrUser({});
-      setUser('');
-      setPass('');
+		setCurrUser({});
+		setUser('');
+		setPass('');
 	};
 
-	const pokemonSearch = (e) => {
+	const pokemonSearch = async (e) => {
 		e.preventDefault();
 		console.log('Pokemon Search');
+		let request = apiUrl + pokeName;
+		await fetch(request)
+			.then((ret) => ret.json())
+			.then((result) => setCards(result.data));
+	};
+
+	const addToCollection = (card) => {
+		let newCard = {
+			id: card.id,
+			name: card.name,
+			images: card.images,
+			rarity: card.rarity,
+		};
+		// Pass the new card to be saved in the db file
+	};
+
+	const removeFromCollection = (oldCard) => {
+		let oldCardID = oldCard.id;
+		// Pass the old card to be removed from the db file
 	};
 
 	// Form for signing in as a trainer
@@ -83,6 +105,21 @@ function Cards() {
 							/>
 							<button type='submit'>Search</button>
 						</form>
+						<br />
+						<div className='cardCollection'>
+							{cards.map((card, i) => (
+								<div id={i}>
+									<img src={card.images.small} alt='' />
+									<br />
+									<button onClick={() => addToCollection(card)}>
+										Add
+									</button>
+									<button onClick={() => removeFromCollection(card)}>
+										Remove
+									</button>
+								</div>
+							))}
+						</div>
 					</div>
 				) : (
 					<div>
@@ -93,16 +130,16 @@ function Cards() {
 								type='text'
 								name='user'
 								value={user}
-                        onChange={updateFields}
-                        placeholder='ProfOak123'
+								onChange={updateFields}
+								placeholder='ProfOak123'
 							/>
 							<label>Password: </label>
 							<input
 								type='text'
 								name='pass'
 								value={pass}
-                        onChange={updateFields}
-                        placeholder='catchEm@ll'
+								onChange={updateFields}
+								placeholder='catchEm@ll'
 							/>
 							<button type='submit'>Search</button>
 						</form>
