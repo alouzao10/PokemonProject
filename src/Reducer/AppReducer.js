@@ -1,4 +1,4 @@
-export default (state, payload) => {
+export default async (state, payload) => {
 	switch (payload.action) {
 		case 'ADD_CARD':
 			let newCard = payload.data.newCard;
@@ -9,24 +9,21 @@ export default (state, payload) => {
 			// Use the PUT method, see example from crash course
 
 			var currTrainer;
-			fetch(`http://localhost:5000/trainers/${userID}`)
+			await fetch(`http://localhost:5000/trainers/${userID}`)
 				.then((res) => res.json())
 				.then((data) => {
 					console.log('Data', data);
 					currTrainer = { ...data, pokemon: [...data.pokemon, newCard] };
-				})
-				.then(() => {
-					console.log(currTrainer);
-					fetch(`http://localhost:5000/trainers/${userID}`, {
-						method: 'PUT',
-						headers: { 'Content-type': 'application/json' },
-						body: JSON.stringify(currTrainer),
-					})
-						.then((res) => res.json())
-						.then((data) => {
-							return [...state.trainers, data];
-						});
 				});
+			console.log('Current Trainer: ', currTrainer);
+
+			await fetch(`http://localhost:5000/trainers/${userID}`, {
+				method: 'PUT',
+				headers: { 'Content-type': 'application/json' },
+				body: JSON.stringify(currTrainer),
+			})
+				.then((res) => res.json())
+				.then((data) => console.log('Trainer Updated: ', data));
 			break;
 		default:
 			break;
