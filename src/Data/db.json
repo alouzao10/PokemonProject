@@ -5,7 +5,26 @@
       "name": "Ash",
       "user": "TheVeryBest",
       "pass": "pokemon123",
-      "pokemon": []
+      "pokemon": [
+        {
+          "id": "basep-1",
+          "name": "Pikachu",
+          "images": "https://images.pokemontcg.io/basep/1.png",
+          "rarity": "Promo"
+        },
+        {
+          "id": "base4-4",
+          "name": "Charizard",
+          "images": "https://images.pokemontcg.io/base4/4.png",
+          "rarity": "Rare Holo"
+        },
+        {
+          "id": "bw10-14",
+          "name": "Squirtle",
+          "images": "https://images.pokemontcg.io/bw10/14.png",
+          "rarity": "Common"
+        }
+      ]
     },
     {
       "id": 2,

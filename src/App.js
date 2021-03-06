@@ -26,7 +26,11 @@ function App() {
 				<Router>
 					<Header />
 					<Route exact path='/' component={Home} />
-					<Route exact path='/cards' render={() => <Cards apiUrl={API_URL}/>} />
+					<Route
+						exact
+						path='/cards'
+						render={() => <Cards apiUrl={API_URL} />}
+					/>
 					<Route exact path='/trainers' component={Trainers} />
 					<Route exact path='/about' component={About} />
 				</Router>

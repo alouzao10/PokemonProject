@@ -4,7 +4,7 @@ import React, { useState, useContext } from 'react';
 import { GlobalContext } from '../../Context/AppContext';
 
 function Cards(props) {
-	const { trainers } = useContext(GlobalContext);
+	const { trainers, addCard } = useContext(GlobalContext);
 
 	const { apiUrl } = props;
 
@@ -73,12 +73,12 @@ function Cards(props) {
 		let newCard = {
 			id: card.id,
 			name: card.name,
-			images: card.images,
+			images: card.images.small,
 			rarity: card.rarity,
 		};
-      // Pass the new card to be saved in the db file
-      // Pass in the trainer info to save the cards based on the trainer
-      addCard(newCard, currUser.id)
+		// Pass the new card to be saved in the db file
+		// Pass in the trainer info to save the cards based on the trainer
+		addCard(newCard, currUser.id);
 	};
 
 	const removeFromCollection = (oldCard) => {
