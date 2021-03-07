@@ -1,56 +1,99 @@
 {
-	"trainers": [
-		{
-			"id": 1,
-			"name": "Ash",
-			"user": "TheVeryBest",
-			"pass": "pokemon123",
-			"pokemon": [
-				{
-					"id": "basep-1",
-					"name": "Pikachu",
-					"images": "https://images.pokemontcg.io/basep/1.png",
-					"rarity": "Promo"
-				},
-				{
-					"id": "base4-4",
-					"name": "Charizard",
-					"images": "https://images.pokemontcg.io/base4/4.png",
-					"rarity": "Rare Holo"
-				},
-				{
-					"id": "bw10-14",
-					"name": "Squirtle",
-					"images": "https://images.pokemontcg.io/bw10/14.png",
-					"rarity": "Common"
-				},
-				{
-					"id": "base4-67",
-					"name": "Bulbasaur",
-					"images": "https://images.pokemontcg.io/base4/67.png",
-					"rarity": "Common"
-				},
-				{
-					"id": "xy12-9",
-					"name": "Charmander",
-					"images": "https://images.pokemontcg.io/xy12/9.png",
-					"rarity": "Common"
-				}
-			]
-		},
-		{
-			"id": 2,
-			"name": "Misty",
-			"user": "WaterPower",
-			"pass": "dripdrip123",
-			"pokemon": []
-		},
-		{
-			"id": 3,
-			"name": "Brock",
-			"user": "RockNRoller",
-			"pass": "rocksmash123",
-			"pokemon": []
-		}
-	]
+  "trainers": [
+    {
+      "id": 1,
+      "name": "Ash",
+      "user": "TheVeryBest",
+      "pass": "pokemon123",
+      "pokemon": [
+        {
+          "id": "basep-1",
+          "name": "Pikachu",
+          "images": "https://images.pokemontcg.io/basep/1.png",
+          "rarity": "Promo"
+        },
+        {
+          "id": "base4-4",
+          "name": "Charizard",
+          "images": "https://images.pokemontcg.io/base4/4.png",
+          "rarity": "Rare Holo"
+        },
+        {
+          "id": "bw10-14",
+          "name": "Squirtle",
+          "images": "https://images.pokemontcg.io/bw10/14.png",
+          "rarity": "Common"
+        },
+        {
+          "id": "base4-67",
+          "name": "Bulbasaur",
+          "images": "https://images.pokemontcg.io/base4/67.png",
+          "rarity": "Common"
+        },
+        {
+          "id": "xy12-9",
+          "name": "Charmander",
+          "images": "https://images.pokemontcg.io/xy12/9.png",
+          "rarity": "Common"
+        },
+        {
+          "id": "ex6-38",
+          "name": "Mankey",
+          "images": "https://images.pokemontcg.io/ex6/38.png",
+          "rarity": "Uncommon"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Misty",
+      "user": "WaterPower",
+      "pass": "dripdrip123",
+      "pokemon": [
+        {
+          "id": "base1-65",
+          "name": "Staryu",
+          "images": "https://images.pokemontcg.io/base1/65.png",
+          "rarity": "Common"
+        },
+        {
+          "id": "gym1-30",
+          "name": "Misty's Goldeen",
+          "images": "https://images.pokemontcg.io/gym1/30.png",
+          "rarity": "Rare"
+        },
+        {
+          "id": "gym1-56",
+          "name": "Misty's Starmie",
+          "images": "https://images.pokemontcg.io/gym1/56.png",
+          "rarity": "Uncommon"
+        },
+        {
+          "id": "base3-53",
+          "name": "Psyduck",
+          "images": "https://images.pokemontcg.io/base3/53.png",
+          "rarity": "Common"
+        },
+        {
+          "id": "pl1-79",
+          "name": "Lapras",
+          "images": "https://images.pokemontcg.io/pl1/79.png",
+          "rarity": "Common"
+        },
+        {
+          "id": "gym1-32",
+          "name": "Misty's Tentacool",
+          "images": "https://images.pokemontcg.io/gym1/32.png",
+          "rarity": "Rare"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Brock",
+      "user": "RockNRoller",
+      "pass": "rocksmash123",
+      "pokemon": []
+    }
+  ]
 }

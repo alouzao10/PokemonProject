@@ -110,7 +110,7 @@ function Cards(props) {
 						<br />
 						<div className='cardCollection'>
 							{cards.map((card, i) => (
-								<div id={i}>
+								<div key={i}>
 									<img src={card.images.small} alt='' />
 									<br />
 									<button onClick={() => addToCollection(card)}>

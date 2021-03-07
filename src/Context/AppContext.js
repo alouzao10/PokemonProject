@@ -16,7 +16,7 @@ export const AppProvider = ({ children }) => {
 	// Decalre state that uses the Reducer to modify and return new state
 	// state = initial or updated state
 	// dispatch = info to pass into the Reducer
-	const [state, setState] = useReducer(AppReducer);
+	const [state, setState] = useReducer(AppReducer, initialState);
 
 	// Define functions for use
 	// ...
